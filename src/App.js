@@ -2,7 +2,7 @@ const Pet = () => {
 	return React.createElement("div", {}, [
 		React.createElement("h1", {}, "Balu"),
 		React.createElement("h2", {}, "Dog"),
-		React.createElement("h3", {}, "Bern Mountain")
+		React.createElement("h2", {}, "Bern Mountain")
 	]);
 };
 
@@ -10,8 +10,13 @@ const Pet = () => {
 const App = () => {
 	return React.createElement(
 		"div",
-		{},
-		React.createElement("h1", {}, "Adopt me!")
+		{ id: "something-important" },
+		[
+			React.createElement("h1", {}, "Adopt me!"),
+			React.createElement(Pet),
+			React.createElement(Pet),
+			React.createElement(Pet)
+		]
 	);
 };
 
