@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "prettier \"src/**/*.{js,html}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,6 @@
   },
   "homepage": "https://github.com/dariok87/adopt-pet#readme",
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "2.2.1"
   }
 }
