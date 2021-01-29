@@ -1,0 +1,22 @@
+{
+  "name": "adopt-pet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariok87/adopt-pet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dariok87/adopt-pet/issues"
+  },
+  "homepage": "https://github.com/dariok87/adopt-pet#readme",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
