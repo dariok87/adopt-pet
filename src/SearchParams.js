@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import  { ANIMALS } from "@frontendmasters/pet";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA"); //this is a hook. All hooks begin with "use".
+  const [animal, setAnimal] = useState("dog");
 
   return (
     <div className="search-params">
