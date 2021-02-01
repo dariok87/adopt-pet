@@ -17,6 +17,16 @@ const SearchParams = () => {
             onChange={e => setLocation(e.target.value)}
           />
         </label>
+        <label htmlFor="animal">
+          animal
+          <select 
+            id="animal"
+            value={animal}
+            onChange={e => setAnimal(e.target.value)}
+            onBlur={e => setAnimal(e.target.value)}>
+            <option>All</option>
+          </select>
+        </label>
         <button>
           Submit
         </button>
