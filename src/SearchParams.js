@@ -4,6 +4,8 @@ import  { ANIMALS } from "@frontendmasters/pet";
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA"); //this is a hook. All hooks begin with "use".
   const [animal, setAnimal] = useState("dog");
+  const [breed, setBreed] = useState("");
+  const [breeds, setBreeds] = useState([]); // Empty array because we are requesting from API. "I have a dog, give me back all of the dog breeds"
 
   return (
     <div className="search-params">
@@ -29,6 +31,20 @@ const SearchParams = () => {
               <option key={animal} value={animal}>{animal}</option>
             ))}
           </select>
+        </label>
+        <label>
+          Breed
+          <select
+            id="breed"
+            value={breed}
+            onChange={e => setBreed(e.target.value)}
+            onBlur={e => setBreed(e.target.value)}
+            disabled={!breeds.length}>
+            <option>All</option>
+            {breeds.map(breedString => (
+              <option key={breedString} value={breedString}>{breedString}</option>
+            ))}
+            </select>
         </label>
         <button>
           Submit
