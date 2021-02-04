@@ -3,14 +3,20 @@ import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 
 const SearchParams = () => {
-  const [location, setLocation] = useState("Seattle, WA"); //this is a hook. All hooks begin with "use".
-  const [breeds, setBreeds] = useState([]); // Empty array because we are requesting from API. "I have a dog, give me back all of the dog breeds"
+  const [location, updateLocation] = useState("Seattle, WA"); //this is a hook. All hooks begin with "use".
+  const [breeds, updateBreeds] = useState([]); // Empty array because we are requesting from API. "I have a dog, give me back all of the dog breeds".
   const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
-  const [breed, BreedDropdown] = useDropdown("Breed", "", breeds);
+  const [breed, BreedDropdown, updateBreed] = useDropdown("Breed", "", breeds);
 
   useEffect(() => {
-    pet.breeds("dog").then(console.log, console.error);
-  })
+    updateBreeds([]);
+    updateBreed("");
+
+    pet.breeds(animal).then(({ breeds }) => {
+      const breedStrings = breeds.map(({ name }) => name);
+      updateBreeds(breedStrings);
+    }, console.error);
+  }, [animal, updateBreed, updateBreeds]); // only run when these things change, not after every single render.
 
   return (
     <div className="search-params">
@@ -21,7 +27,7 @@ const SearchParams = () => {
             id="location" 
             value={location} 
             placeholder="Location" 
-            onChange={e => setLocation(e.target.value)}
+            onChange={e => updateLocation(e.target.value)}
           />
         </label>
         <AnimalDropdown />
