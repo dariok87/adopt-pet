@@ -5,7 +5,7 @@ import useDropdown from "./useDropdown";
 const SearchParams = () => {
   const [location, updateLocation] = useState("Seattle, WA"); //this is a hook. All hooks begin with "use".
   const [breeds, updateBreeds] = useState([]); // Empty array because we are requesting from API. "I have a dog, give me back all of the dog breeds".
-  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS); // abel, defaultState, options
   const [breed, BreedDropdown, updateBreed] = useDropdown("Breed", "", breeds);
 
   useEffect(() => {
