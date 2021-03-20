@@ -10,8 +10,8 @@ const App = () => {
        <div>
         <h1 id="something-important">Adopt me!</h1>
         <Router>
-          <SearchParams />
-          <Details />
+          <SearchParams path="/" />
+          <Details path="/details/:id"/>
         </Router>
       </div>
     </React.StrictMode>
