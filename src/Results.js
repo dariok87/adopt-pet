@@ -7,19 +7,21 @@ const Results = ({ pets }) => {
       {pets.length === 0 ? (
         <h1>No pets found</h1>
       ) : (
-        pets.map(pet => (
-          <Pet 
-            animal={pets.type}
-            key={pets.id}
-            name={pets.name}
-            breed={pets.breeds.primary}
-            media={pets.photos}
-            location={`${pet.contact.address.city}, ${
-              pet.contact.address.state
-            }`}
-            id={pet.id}
-          />
-        ))
+        pets.map(pet => {
+          return (
+            <Pet 
+              animal={pets.type}
+              key={pets.id}
+              name={pets.name}
+              breed={pets.breeds.primary}
+              media={pets.photos}
+              location={`${pet.contact.address.city}, ${
+                pet.contact.address.state
+              }`}
+              id={pet.id}
+            />
+          );
+        })
       )}
     </div>
   );
