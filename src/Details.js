@@ -3,13 +3,7 @@ import React from "react";
 import pet from "@frontendmasters/pet";
 
 class Details extends React.Component {
-  constructor(props) { // set the loading state
-    super(props);
-
-    this.state = {
-      loading: true
-    };
-  }
+  state = { loading: true };
   componentDidMount () { // lifecycle method
     pet.animal(this.props.id)
       .then(({ animal }) => {
